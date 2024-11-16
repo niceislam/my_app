@@ -1,0 +1,100 @@
+void main(){
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: first_screen(),
+    );
+  }
+}
+
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+import 'app_body.dart';
+
+class first_screen extends StatelessWidget {
+  const first_screen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+          backgroundColor: Colors.red,
+          leading: Icon(
+            Icons.menu,
+            color: Colors.white,
+            size: 30,
+          ),
+          title: Text(
+            "Hamar Thakurgaon",
+            style: TextStyle(
+                color: Colors.white,
+                fontSize: 25,
+                fontStyle: FontStyle.italic,
+                letterSpacing: 5,
+                wordSpacing: 10),
+          ),
+          actions: [
+            Icon(
+              Icons.person,
+              color: Colors.white,
+              size: 30,
+            ),
+            Icon(
+              CupertinoIcons.bell,
+              color: Colors.white,
+              size: 27,
+            )
+          ],
+        ),
+        body: AppBody(),
+
+
+    );
+  }
+}
+
+import 'package:flutter/material.dart';
+
+
+class AppBody extends StatelessWidget {
+  const AppBody({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+    child: Container(
+    padding: EdgeInsets.all(20),
+    color: Colors.green[100],
+    height: 150,
+    width: 150,
+    margin: EdgeInsets.all(10),
+    child: Container(
+    padding: EdgeInsets.all(20),
+    color: Colors.red[200],
+    height: 60,
+    width: 110,
+    child: Container(
+    color: Colors.yellow[300],
+    child: Text(
+    "NICE",
+    textAlign: TextAlign.center,
+    style: TextStyle(
+    color: Colors.purpleAccent,
+    fontWeight: FontWeight.bold,
+    fontSize: 30),
+    ),
+    ),
+    ),
+    ),
+    );
+  }
+}
